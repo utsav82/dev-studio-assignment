@@ -12,7 +12,7 @@ const ProfilePage = () => {
         <div className="text-lg">Profile</div>
       </div>
 
-      <div className="relative min-h-[120px] min-w-[120px] bg-gray-200 rounded-full">
+      <div className="relative min-h-[120px] min-w-[120px] bg-gray-300 rounded-full">
         <div className="absolute bottom-1 right-1 w-10 h-10 bg-primary rounded-full flex items-center justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,6 @@ const ProfilePage = () => {
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="lucide lucide-chevron-down"
             >
               <path d="m6 9 6 6 6-6" />
             </svg>
@@ -96,7 +95,7 @@ const ProfilePage = () => {
           id="city"
           name="city"
           defaultValue="City"
-          className="mt-1 block w-full bg-white border border-gray-300 rounded-md px-4 h-[60px] text-gray-500"
+          className=" form-select appearance-none pr-8 bg-no-repeat mt-1 block w-full bg-white border border-gray-300 rounded-md px-4 h-[60px] text-gray-400"
         >
           <option disabled>City</option>
           <option>New York</option>
@@ -108,7 +107,7 @@ const ProfilePage = () => {
           id="district"
           name="district"
           defaultValue="District"
-          className="mt-1 block w-full border bg-white border-gray-300 rounded-md px-4 h-[60px] text-gray-500"
+          className=" form-select appearance-none pr-8 bg-no-repeat mt-1 block w-full border bg-white border-gray-300 rounded-md px-4 h-[60px] text-gray-400"
         >
           <option disabled>District</option>
           <option>Manhattan</option>
@@ -118,12 +117,18 @@ const ProfilePage = () => {
       </div>
 
       <div className="flex space-x-4 w-full max-w-[450px] pb-4 ">
-        <button className="flex-1 h-[56px] py-2 px-4 border border-[#008955] rounded-md">
+        <Link
+          href={"/"}
+          className="flex-1 h-[56px] py-2 px-4 border border-[#008955] rounded-md flex justify-center items-center"
+        >
           Cancel
-        </button>
-        <button className="flex-1 h-[56px] py-2 px-4 border border-[#008955] rounded-md bg-primary text-white">
+        </Link>
+        <Link
+          href={"/login"}
+          className="flex-1 h-[56px] py-2 px-4 border border-[#008955] rounded-md bg-primary text-white flex justify-center items-center"
+        >
           Save
-        </button>
+        </Link>
       </div>
     </div>
   );
