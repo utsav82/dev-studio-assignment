@@ -47,6 +47,22 @@ const ProfilePage = () => {
             className="mr-2 h-6 rounded-md"
           />
 
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-chevron-down"
+            >
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </div>
           <div className="border-r border-gray-300 h-4 mr-2"></div>
 
           <span className=" mr-2">+91</span>
@@ -101,7 +117,7 @@ const ProfilePage = () => {
         </select>
       </div>
 
-      <div className="flex space-x-4 w-full max-w-[450px] pb-4 " >
+      <div className="flex space-x-4 w-full max-w-[450px] pb-4 ">
         <button className="flex-1 h-[56px] py-2 px-4 border border-[#008955] rounded-md">
           Cancel
         </button>
