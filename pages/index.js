@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -35,7 +36,7 @@ export default function Home() {
 
 
         <div className="relative flex items-center justify-center w-[76px] h-[76px] rounded-full bg-white z-10">
-          <button className="relative flex items-center justify-center w-[70px] h-[70px] rounded-full bg-[#08B783] text-white">
+          <Link href={"/profile"} className="relative flex items-center justify-center w-[70px] h-[70px] rounded-full bg-[#08B783] text-white">
 
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +52,7 @@ export default function Home() {
               <path d="M5 12h14" />
               <path d="m12 5 7 7-7 7" />
             </svg>
-          </button>
+          </Link>
         </div>
       </div>
     </main>
