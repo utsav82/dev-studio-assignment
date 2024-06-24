@@ -101,7 +101,7 @@ const ProfilePage = () => {
         </select>
       </div>
 
-      <div className="flex space-x-4 w-full max-w-[450px]" >
+      <div className="flex space-x-4 w-full max-w-[450px] pb-4 " >
         <button className="flex-1 h-[56px] py-2 px-4 border border-[#008955] rounded-md">
           Cancel
         </button>
