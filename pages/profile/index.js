@@ -42,7 +42,7 @@ const ProfilePage = () => {
 
         <div className="relative flex items-center w-full border border-gray-300 rounded-md px-4 h-[60px]">
           <img
-            src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/383px-Flag_of_India.svg.png"
+            src="india.png"
             alt="India Flag"
             className="mr-2 h-6 rounded-md"
           />
