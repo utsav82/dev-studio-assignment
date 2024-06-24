@@ -12,7 +12,7 @@ const ProfilePage = () => {
         <div className="text-lg">Profile</div>
       </div>
 
-      <div className="relative h-[120px] w-[120px] bg-gray-200 rounded-full">
+      <div className="relative min-h-[120px] min-w-[120px] bg-gray-200 rounded-full">
         <div className="absolute bottom-1 right-1 w-10 h-10 bg-primary rounded-full flex items-center justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +101,7 @@ const ProfilePage = () => {
         </select>
       </div>
 
-      <div className="flex space-x-4 w-full">
+      <div className="flex space-x-4 w-full max-w-[450px]" >
         <button className="flex-1 h-[56px] py-2 px-4 border border-[#008955] rounded-md">
           Cancel
         </button>
