@@ -15,7 +15,7 @@ export default function Home() {
           className="w-[400px]"
         />
         <div className="flex flex-col items-center gap-3 m-5 p-5">
-          <h1 className="text-xl">Anywhere you are</h1>
+          <h1 className="text-[24px]">Anywhere you are</h1>
           <div className="text-sm font-medium text-center text-font-secondary">
             Sell houses easily with the help of Listenoryx and to make this line
             big
@@ -25,19 +25,18 @@ export default function Home() {
       </div>
 
       <div className="relative flex items-center justify-center w-[86px] h-[86px]">
-        {/* Outer Ring (Progress) */}
         <div className="absolute w-full h-full rounded-full bg-gray-200"></div>
         <div
           className="absolute w-full h-full rounded-full"
           style={{
-            background: "conic-gradient(#08b783 0% 40%, transparent 40% 100%)",
+            background: "conic-gradient(#08b783 0% 35%, transparent 35% 100%)",
           }}
-        ></div>
+        />
 
-        {/* Button */}
+
         <div className="relative flex items-center justify-center w-[76px] h-[76px] rounded-full bg-white z-10">
           <button className="relative flex items-center justify-center w-[70px] h-[70px] rounded-full bg-[#08B783] text-white">
-            {/* Arrow */}
+
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -48,7 +47,6 @@ export default function Home() {
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              className="lucide lucide-arrow-right"
             >
               <path d="M5 12h14" />
               <path d="m12 5 7 7-7 7" />
