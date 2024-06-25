@@ -1,36 +1,22 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Header from "@/components/Header";
+import Button from "@/components/Button";
+import Input from "@/components/Input";
 
 const LoginPage = () => {
   return (
     <div className="min-h-screen flex flex-col items-center p-5 space-y-8 relative">
-      <div className=" flex justify-center w-full">
-        <Link href="/profile" className="absolute left-5">
-          {" "}
-          {"< Back"}
-        </Link>
-      </div>
+      <Header backLink="/profile" title="" />
 
-      <div className="text-2xl  pt-4">
+      <div className="text-2xl pt-4">
         Sign up with your email or phone number
       </div>
 
       <div className="w-full max-w-md space-y-4">
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Name"
-          className=" block w-full border border-gray-300 rounded-md h-[60px] pl-5"
-        />
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Email"
-          className="mt-1 block w-full border border-gray-300 rounded-md pl-5 h-[60px]"
-        />
+        <Input type="text" id="name" name="name" placeholder="Name" />
+        <Input type="email" id="email" name="email" placeholder="Email" />
 
         <div className="relative flex items-center w-full border border-gray-300 rounded-md px-4 h-[60px]">
           <img
@@ -47,16 +33,16 @@ const LoginPage = () => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
               <path d="m6 9 6 6 6-6" />
             </svg>
           </div>
           <div className="border-r border-gray-300 h-4 mr-2"></div>
 
-          <span className=" mr-2">+91</span>
+          <span className="mr-2">+91</span>
 
           <input
             type="text"
@@ -104,10 +90,12 @@ const LoginPage = () => {
         </div>
       </div>
 
-      <div className="flex space-x-4 w-full max-w-md ">
-        <Link href={"/dashboard"} className="flex-1 h-[56px] py-2 px-4 border border-[#008955] rounded-md bg-primary text-white flex justify-center items-center">
-         Sign up
-        </Link>
+      <div className="flex space-x-4 w-full max-w-md">
+        <Button
+          href="/dashboard"
+          text="Sign up"
+          className="bg-primary text-white border border-[#008955] rounded-md"
+        />
       </div>
 
       <div className="flex items-center w-full max-w-md">
@@ -116,13 +104,14 @@ const LoginPage = () => {
         <div className="flex-grow border-t border-gray-300"></div>
       </div>
 
-      <div className="flex w-full  flex-col gap-4 max-w-md">
+      <div className="flex w-full flex-col gap-4 max-w-md">
         <div className="w-full border border-gray-300 rounded-md h-[60px] pl-5 flex items-center justify-center">
           <Image
             src={"gmail.svg"}
             height={100}
             width={100}
             className="w-4 mr-2"
+            alt="Gmail"
           />{" "}
           Sign up with Gmail
         </div>
@@ -133,6 +122,7 @@ const LoginPage = () => {
             height={100}
             width={100}
             className="w-5 mr-2"
+            alt="Facebook"
           />{" "}
           Sign up with Facebook
         </div>
@@ -143,13 +133,16 @@ const LoginPage = () => {
             height={100}
             width={100}
             className="w-5 mr-2"
+            alt="Apple"
           />{" "}
           Sign up with Apple
         </div>
       </div>
       <p className="text-[16px] pb-4">
         Already have an account?
-        <span className="text-[#08B783] inline-block ml-2">Sign in</span>
+        <Link href="/login">
+          <span className="text-[#08B783] inline-block ml-2">Sign in</span>
+        </Link>
       </p>
     </div>
   );
