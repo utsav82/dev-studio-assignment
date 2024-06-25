@@ -43,6 +43,7 @@ const LoginPage = () => {
             id="mobileNumber"
             name="mobileNumber"
             placeholder="Your Mobile Number"
+            style={{ minWidth: "300px" }}
           />
         </div>
 
@@ -66,7 +67,8 @@ const LoginPage = () => {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="w-6 h-6"
+            height={24}
+            width={24}
           >
             <circle cx="12" cy="12" r="10" />
             <path d="M9 12l2 2 4-4" />
@@ -99,29 +101,25 @@ const LoginPage = () => {
             src={"gmail.svg"}
             height={100}
             width={100}
-            className="w-4 mr-2"
+            style={{ width: "20px", marginRight: "10px" }}
             alt="Gmail"
           />
           Sign up with Gmail
         </div>
 
         <div className={styles.socialButton}>
-          <Image
+          <img
             src={"/Facebook.png"}
-            height={100}
-            width={100}
-            className="w-5 mr-2"
+            style={{ width: "24px", marginRight: "10px" }}
             alt="Facebook"
           />
           Sign up with Facebook
         </div>
 
         <div className={styles.socialButton}>
-          <Image
+          <img
             src={"/Apple.png"}
-            height={100}
-            width={100}
-            className="w-5 mr-2"
+            style={{ width: "24px", marginRight: "10px" }}
             alt="Apple"
           />
           Sign up with Apple
