@@ -1,22 +1,22 @@
 import React from "react";
+import styles from "@/styles/profile.module.scss";
 import Button from "@/components/Button";
 import Input from "@/components/Input";
 import Header from "@/components/Header";
 
 const ProfilePage = () => {
   return (
-    <div className="h-screen flex flex-col items-center p-5 space-y-10 relative">
+    <div className={styles.container}>
       <Header backLink="/" title="Profile" />
 
-      <div className="relative min-h-[120px] min-w-[120px] bg-gray-300 rounded-full">
-        <div className="absolute bottom-1 right-1 w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+      <div className={styles.profilePicture}>
+        <div className={styles.cameraIcon}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="white"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -27,19 +27,15 @@ const ProfilePage = () => {
         </div>
       </div>
 
-      <div className="w-full max-w-md space-y-4">
+      <div className={styles.formContainer}>
         <Input
           type="text"
           id="fullName"
           name="fullName"
           placeholder="Full Name"
         />
-        <div className="relative flex items-center w-full border border-gray-300 rounded-md px-4 h-[60px]">
-          <img
-            src="india.png"
-            alt="India Flag"
-            className="mr-2 h-6 rounded-md"
-          />
+        <div className={styles.phoneInput}>
+          <img src="india.png" alt="India Flag" className={styles.flag} />
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -55,14 +51,13 @@ const ProfilePage = () => {
               <path d="m6 9 6 6 6-6" />
             </svg>
           </div>
-          <div className="border-r border-gray-300 h-4 mr-2"></div>
-          <span className=" mr-2">+91</span>
+          <div className={styles.divider}></div>
+          <span className={styles.countryCode}>+91</span>
           <input
             type="text"
             id="mobileNumber"
             name="mobileNumber"
             placeholder="Your Mobile Number"
-            className="flex-1 block w-full border-none p-2"
           />
         </div>
         <Input type="email" id="email" name="email" placeholder="Email" />
@@ -71,7 +66,7 @@ const ProfilePage = () => {
           id="city"
           name="city"
           defaultValue="City"
-          className="form-select appearance-none pr-8 bg-no-repeat mt-1 block w-full bg-white border border-gray-300 rounded-md px-4 h-[60px] text-gray-400"
+          className={styles.select + " form-select"}
         >
           <option disabled>City</option>
           <option>New Delhi</option>
@@ -81,7 +76,7 @@ const ProfilePage = () => {
           id="district"
           name="district"
           defaultValue="District"
-          className="form-select appearance-none pr-8 bg-no-repeat mt-1 block w-full bg-white border border-gray-300 rounded-md px-4 h-[60px] text-gray-400"
+          className={styles.select + " form-select"}
         >
           <option disabled>District</option>
           <option>Lucknow</option>
@@ -89,17 +84,9 @@ const ProfilePage = () => {
         </select>
       </div>
 
-      <div className="flex space-x-4 w-full max-w-md">
-        <Button
-          href="/"
-          text="Cancel"
-          className=" border border-[#008955] rounded-md"
-        />
-        <Button
-          href="/login"
-          text="Save"
-          className="bg-primary text-white border border-[#008955] rounded-md"
-        />
+      <div className={styles.buttonContainer}>
+        <Button href="/" text="Cancel" className={styles.cancelButton} />
+        <Button href="/login" text="Save" className={styles.saveButton} />
       </div>
     </div>
   );

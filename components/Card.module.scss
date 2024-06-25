@@ -1,0 +1,19 @@
+
+.card {
+    height: 145px;
+    width: 166px;
+    background-color: #E2F5ED;
+    border: 1px solid #08B783;
+    color: #5A5A5A;
+    border-radius: 0.375rem;
+    padding: 0.5rem;
+  
+    .amount {
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+    }
+  
+    .text {
+      margin-top: 1.25rem;
+    }
+  }

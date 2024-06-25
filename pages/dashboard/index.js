@@ -1,7 +1,6 @@
-import React from "react";
 import Link from "next/link";
 import Header from "@/components/Header";
-import Button from "@/components/Button";
+import Card from "@/components/Card";
 import Footer from "@/components/Footer";
 
 const Dashboard = () => {
@@ -25,7 +24,7 @@ const Dashboard = () => {
 
   return (
     <div className="h-screen flex flex-col items-center p-5 space-y-5">
-      <Header backLink="/" title="" />
+      <Header backLink="/login" title="" />
 
       <div className="w-full flex justify-end items-center">
         <button className="w-[170px] h-[54px] p-2 border border-[#008955] rounded-md text-[#008955]">
@@ -34,14 +33,8 @@ const Dashboard = () => {
       </div>
 
       <div className="w-full flex justify-between my-5 space-x-2">
-        <div className="h-[145px] w-[166px] bg-[#E2F5ED] border border-[#08B783] text-[#5A5A5A] rounded-md p-2 flex flex-col justify-center items-center">
-          <div className="text-3xl">{`₹${avialableBalance}`}</div>
-          <div className="mt-5">Available Balance</div>
-        </div>
-        <div className="h-[145px] w-[166px] bg-[#E2F5ED] border border-[#08B783] text-[#5A5A5A] rounded-md p-2 flex flex-col justify-center items-center">
-          <div className="text-3xl">{`₹${totalExpense}`}</div>
-          <div className="mt-5">Total Expense</div>
-        </div>
+        <Card amount={`₹${avialableBalance}`} text="Available Balance" />
+        <Card amount={`₹${totalExpense}`} text="Total Expense" />
       </div>
 
       <div className="w-full flex justify-between items-center">
@@ -73,7 +66,7 @@ const Dashboard = () => {
               <div>
                 <div className="font-semibold">{transaction.label}</div>
                 <div className="text-sm text-gray-500">
-                  {new Date(parseInt(transaction.date)).toLocaleString()}
+                  {formatDate(transaction.date)}
                 </div>
               </div>
             </div>
@@ -89,5 +82,34 @@ const Dashboard = () => {
     </div>
   );
 };
+
+function formatDate(dateString) {
+  const transactionDate = new Date(parseInt(dateString));
+  const now = new Date();
+
+  if (
+    transactionDate.getDate() === now.getDate() &&
+    transactionDate.getMonth() === now.getMonth() &&
+    transactionDate.getFullYear() === now.getFullYear()
+  ) {
+    const hours = transactionDate.getHours();
+    const minutes = transactionDate.getMinutes();
+    const ampm = hours >= 12 ? "pm" : "am";
+    const formattedHours = hours % 12 === 0 ? 12 : hours % 12; 
+
+    return `Today at ${formattedHours}:${
+      minutes < 10 ? "0" : ""
+    }${minutes} ${ampm}`;
+  } else {
+    const options = {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+    };
+    return transactionDate.toLocaleDateString("en-US", options);
+  }
+}
 
 export default Dashboard;

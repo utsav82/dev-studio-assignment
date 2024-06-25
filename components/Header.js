@@ -1,13 +1,13 @@
+import styles from './Header.module.scss';
 import Link from "next/link";
 
 const Header = ({ backLink, title }) => {
   return (
-    <div className=" flex justify-center w-full">
-      <Link href={backLink} className="absolute left-5">
-        {" "}
+    <div className={styles.header}>
+      <Link href={backLink} className={styles.backLink}>
         {"< Back"}
       </Link>
-      {title && <div className="text-lg">{title}</div>}
+      {title && <div className={styles.title}>{title}</div>}
     </div>
   );
 };

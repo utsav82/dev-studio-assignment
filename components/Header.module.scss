@@ -1,0 +1,14 @@
+.header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  
+    .backLink {
+      position: absolute;
+      left: 1.25rem;
+    }
+  
+    .title {
+      font-size: 1.125rem;
+    }
+  }

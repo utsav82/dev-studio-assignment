@@ -1,9 +1,10 @@
+import styles from './SVG.module.scss';
 
 const SVG = ({ href, svg, text }) => {
   return (
-    <div href={href} className="flex flex-col justify-center items-center">
-      <img src={svg} alt={text} className="w-6 h-6" />
-      <div>{text}</div>
+    <div className={styles.container}>
+      <img src={svg} alt={text} className={styles.icon} />
+      <div className={styles.text}>{text}</div>
     </div>
   );
 };

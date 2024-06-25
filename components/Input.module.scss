@@ -1,0 +1,20 @@
+// Input.module.scss
+
+.input {
+    display: block;
+    width: 100%;
+    border: 1px solid #d1d5db; // Equivalent to border-gray-300
+    border-radius: 0.375rem; // Equivalent to rounded-md
+    padding-left: 1.25rem; // Equivalent to pl-5
+    height: 60px;
+  
+    &::placeholder {
+      color: #9ca3af; // A common placeholder color, adjust as needed
+    }
+  
+    &:focus {
+      outline: none;
+      border-color: #3b82f6; // Example focus color, adjust as needed
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); // Example focus ring
+    }
+  }

@@ -1,0 +1,158 @@
+// LoginPage.module.scss
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.25rem;
+    gap: 2rem;
+    position: relative;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    padding-top: 1rem;
+  }
+  
+  .formContainer {
+    width: 100%;
+    max-width: 28rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .phoneInput {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    padding: 0 1rem;
+    height: 60px;
+  
+    .flag {
+      margin-right: 0.5rem;
+      height: 1.5rem;
+      border-radius: 0.375rem;
+    }
+  
+    .divider {
+      border-right: 1px solid #d1d5db;
+      height: 1rem;
+      margin-right: 0.5rem;
+    }
+  
+    .countryCode {
+      margin-right: 0.5rem;
+    }
+  
+    input {
+      flex: 1;
+      border: none;
+      padding: 0.5rem;
+      width: 100%;
+  
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  
+  .select {
+    appearance: none;
+    padding-right: 2rem;
+    background-repeat: no-repeat;
+    margin-top: 0.25rem;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    padding: 0 1rem;
+    height: 60px;
+    color: #9ca3af;
+  }
+  
+  .termsContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  
+    p {
+      font-size: 0.875rem;
+      color: #B8B8B8;
+    }
+  
+    .termsLink {
+      color: #08B783;
+      display: inline-block;
+    }
+  }
+  
+  .buttonContainer {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    max-width: 28rem;
+  }
+  
+  .signupButton {
+    background-color: var(--color-primary);
+    color: white;
+    border: 1px solid #008955;
+    border-radius: 0.375rem;
+  }
+  
+  .divider {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 28rem;
+  
+    .line {
+      flex-grow: 1;
+      border-top: 1px solid #d1d5db;
+    }
+  
+    .text {
+      margin: 0 1rem;
+      color: #6b7280;
+    }
+  }
+  
+  .socialButtonsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 28rem;
+  }
+  
+  .socialButton {
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    height: 60px;
+    padding-left: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    img {
+      width: 1rem;
+      margin-right: 0.5rem;
+    }
+  }
+  
+  .footer {
+    font-size: 1rem;
+    padding-bottom: 1rem;
+  
+    .signinLink {
+      color: #08B783;
+      display: inline-block;
+      margin-left: 0.5rem;
+    }
+  }
