@@ -43,7 +43,7 @@ const LoginPage = () => {
             id="mobileNumber"
             name="mobileNumber"
             placeholder="Your Mobile Number"
-            style={{ minWidth: "300px" }}
+            style={{ minWidth: "250px" }}
           />
         </div>
 
