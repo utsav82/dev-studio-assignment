@@ -2,61 +2,45 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Card from "@/components/Card";
 import Footer from "@/components/Footer";
+import styles from "@/styles/dashboard.module.scss";
 
-const Dashboard = () => {
-  const data = {
-    avialableBalance: 500,
-    totalExpense: 175,
-    transactions: [
-      { date: "1717150831365", amount: 45, label: "Pune", type: "expense" },
-      { date: "1717150831365", amount: 25, label: "Pune", type: "expense" },
-      {
-        date: "1717150831365",
-        amount: 25,
-        label: "Cancellation",
-        type: "expense",
-      },
-      { date: "1717150831365", amount: 100, label: "Topup", type: "topup" },
-      { date: "1717150831365", amount: 35, label: "Mumbai", type: "expense" },
-    ],
-  };
+export const getServerSideProps = async () => {
+  const res = await fetch(
+    "https://299e2f7a-3a0f-4d1e-b8f4-8fe77bee946a.mock.pstmn.io/wallet-summary"
+  );
+  const data = await res.json();
+  return { props: { data } };
+};
+
+const Dashboard = ({ data }) => {
   const { avialableBalance, totalExpense, transactions } = data;
 
   return (
-    <div className="h-screen flex flex-col items-center p-5 space-y-5">
+    <div className={styles.container}>
       <Header backLink="/login" title="" />
-
       <div className="w-full flex justify-end items-center">
-        <button className="w-[170px] h-[54px] p-2 border border-[#008955] rounded-md text-[#008955]">
-          Add Money
-        </button>
+        <button className={styles.addMoneyButton}>Add Money</button>
       </div>
-
-      <div className="w-full flex justify-between my-5 space-x-2">
+      <div className={styles.cardContainer}>
         <Card amount={`₹${avialableBalance}`} text="Available Balance" />
         <Card amount={`₹${totalExpense}`} text="Total Expense" />
       </div>
-
-      <div className="w-full flex justify-between items-center">
-        <div className="text-xl font-semibold">Transactions</div>
-        <Link href="/" className="text-[#007848]">
+      <div className={styles.transactionHeader}>
+        <div className={styles.transactionHeaderTitle}>Transactions</div>
+        <Link href="/" className={styles.transactionHeaderLink}>
           See All
         </Link>
       </div>
-
-      <div className="w-full space-y-4 overflow-scroll">
+      <div className={styles.transactionList}>
         {transactions.map((transaction, index) => (
-          <div
-            key={index}
-            className="flex justify-between items-center border border-gray-300 rounded-md p-4"
-          >
-            <div className="flex items-center">
+          <div key={index} className={styles.transactionItem}>
+            <div className={styles.transactionItemLeft}>
               <div
-                className="w-[40px] h-[40px] rounded-full mr-2 flex justify-center items-center"
-                style={{
-                  background:
-                    transaction.type === "expense" ? "#FFCDD2" : "#E2F5ED",
-                }}
+                className={`${styles.transactionItemIcon} ${
+                  transaction.type === "expense"
+                    ? styles.transactionItemIconExpense
+                    : styles.transactionItemIconTopup
+                }`}
               >
                 <img
                   src={transaction.type === "expense" ? "/down.svg" : "/up.svg"}
@@ -64,8 +48,10 @@ const Dashboard = () => {
                 />
               </div>
               <div>
-                <div className="font-semibold">{transaction.label}</div>
-                <div className="text-sm text-gray-500">
+                <div className={styles.transactionItemLabel}>
+                  {transaction.label}
+                </div>
+                <div className={styles.transactionItemDate}>
                   {formatDate(transaction.date)}
                 </div>
               </div>
@@ -77,7 +63,6 @@ const Dashboard = () => {
           </div>
         ))}
       </div>
-
       <Footer />
     </div>
   );
@@ -95,7 +80,7 @@ function formatDate(dateString) {
     const hours = transactionDate.getHours();
     const minutes = transactionDate.getMinutes();
     const ampm = hours >= 12 ? "pm" : "am";
-    const formattedHours = hours % 12 === 0 ? 12 : hours % 12; 
+    const formattedHours = hours % 12 === 0 ? 12 : hours % 12;
 
     return `Today at ${formattedHours}:${
       minutes < 10 ? "0" : ""

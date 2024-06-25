@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import styles from '@/styles/login.module.scss';
+import styles from "@/styles/login.module.scss";
 import Header from "@/components/Header";
 import Button from "@/components/Button";
 import Input from "@/components/Input";
@@ -20,11 +20,7 @@ const LoginPage = () => {
         <Input type="email" id="email" name="email" placeholder="Email" />
 
         <div className={styles.phoneInput}>
-          <img
-            src="india.png"
-            alt="India Flag"
-            className={styles.flag}
-          />
+          <img src="india.png" alt="India Flag" className={styles.flag} />
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +50,7 @@ const LoginPage = () => {
           id="gender"
           name="gender"
           defaultValue="Gender"
-          className={styles.select}
+          className={styles.select + " form-select"}
         >
           <option disabled>Gender</option>
           <option>Male</option>
@@ -77,8 +73,7 @@ const LoginPage = () => {
           </svg>
           <p>
             By signing up, you agree to the{" "}
-            <span className={styles.termsLink}>Terms of service</span>{" "}
-            and{" "}
+            <span className={styles.termsLink}>Terms of service</span> and{" "}
             <span className={styles.termsLink}>Privacy policy</span>.
           </p>
         </div>

@@ -1,4 +1,4 @@
-.home-main {
+.homeMain {
     padding: 0 1.25rem;
     position: relative;
     height: 100svh;
@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: space-around;
   
-    .skip-button {
+    .skipButton {
       position: absolute;
       top: 0;
       right: 0;
@@ -23,11 +23,11 @@
       gap: 1.25rem;
       margin-top: 1.25rem;
   
-      .hero-image {
+      .heroImage {
         width: 400px;
       }
   
-      .text-container {
+      .textContainer {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -48,7 +48,7 @@
       }
     }
   
-    .progress-circle {
+    .progressCircle {
       position: relative;
       display: flex;
       align-items: center;
@@ -72,7 +72,7 @@
         background: conic-gradient(#08b783 0% 35%, transparent 35% 100%);
       }
   
-      .inner-circle {
+      .innerCircle {
         position: relative;
         display: flex;
         align-items: center;
