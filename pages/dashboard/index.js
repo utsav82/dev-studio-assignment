@@ -32,36 +32,39 @@ const Dashboard = ({ data }) => {
         </Link>
       </div>
       <div className={styles.transactionList}>
-        {transactions.map((transaction, index) => (
-          <div key={index} className={styles.transactionItem}>
-            <div className={styles.transactionItemLeft}>
-              <div
-                className={`${styles.transactionItemIcon} ${
-                  transaction.type === "expense"
-                    ? styles.transactionItemIconExpense
-                    : styles.transactionItemIconTopup
-                }`}
-              >
-                <img
-                  src={transaction.type === "expense" ? "/down.svg" : "/up.svg"}
-                  alt=""
-                />
+        {transactions &&
+          transactions.map((transaction, index) => (
+            <div key={index} className={styles.transactionItem}>
+              <div className={styles.transactionItemLeft}>
+                <div
+                  className={`${styles.transactionItemIcon} ${
+                    transaction.type === "expense"
+                      ? styles.transactionItemIconExpense
+                      : styles.transactionItemIconTopup
+                  }`}
+                >
+                  <img
+                    src={
+                      transaction.type === "expense" ? "/down.svg" : "/up.svg"
+                    }
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <div className={styles.transactionItemLabel}>
+                    {transaction.label}
+                  </div>
+                  <div className={styles.transactionItemDate}>
+                    {formatDate(transaction.date)}
+                  </div>
+                </div>
               </div>
               <div>
-                <div className={styles.transactionItemLabel}>
-                  {transaction.label}
-                </div>
-                <div className={styles.transactionItemDate}>
-                  {formatDate(transaction.date)}
-                </div>
+                {transaction.type === "expense" ? "-" : ""}₹
+                {transaction.amount.toFixed(2)}
               </div>
             </div>
-            <div>
-              {transaction.type === "expense" ? "-" : ""}₹
-              {transaction.amount.toFixed(2)}
-            </div>
-          </div>
-        ))}
+          ))}
       </div>
       <Footer />
     </div>
